@@ -18,10 +18,10 @@ jobs:
         dotnet-version: '9.0.x'
     
     - name: Restore dependencies
-      run: dotnet restore --project McpEmailServer.csproj
+      run: dotnet restore
     
     - name: Build
-      run: dotnet build --configuration Release --no-restore --project McpEmailServer.csproj
+      run: dotnet build --configuration Release --no-restore
     
     - name: Publish
       run: dotnet publish --configuration Release --no-build --output ./publish --project McpEmailServer.csproj
