@@ -107,3 +107,4 @@ The server provides the following MCP tools:
 - The appsettings.json file should be added to .gitignore
 - Use app passwords instead of your main password when possible
 - Consider using environment variables or a secure configuration management system in production 
+
