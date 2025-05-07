@@ -32,8 +32,6 @@ jobs:
       with:
         files: |
           ./publish/McpEmailServer.exe
-          ./publish/*.dll
-          ./publish/appsettings.json
         generate_release_notes: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
