@@ -35,7 +35,7 @@ static SmtpSettings LoadConfiguration(IConfiguration configuration)
         Port = int.TryParse(configuration["SMTP_PORT"], out var port) ? port : 25,
         Username = configuration["SMTP_USERNAME"] ?? "",
         Password = configuration["SMTP_PASSWORD"] ?? "",
-        From = configuration["FROM_EMAIL"] ?? ""
+        From = configuration["FROM_EMAIL"] ?? "email@example.com"
     };
 }
 

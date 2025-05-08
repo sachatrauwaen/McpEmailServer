@@ -34,7 +34,10 @@ public static class EmailTools
             message.Body = bodyBuilder.ToMessageBody();
 
             await smtpClient.ConnectAsync(settings.Server, settings.Port, SecureSocketOptions.Auto, cancellationToken);
-            await smtpClient.AuthenticateAsync(settings.Username, settings.Password, cancellationToken);
+            if (!string.IsNullOrEmpty(settings.Username) && !string.IsNullOrEmpty(settings.Password))
+            {
+                await smtpClient.AuthenticateAsync(settings.Username, settings.Password, cancellationToken);
+            }
             await smtpClient.SendAsync(message, cancellationToken);
             await smtpClient.DisconnectAsync(true, cancellationToken);
 
